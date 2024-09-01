@@ -1,0 +1,72 @@
+.itemImg {
+  border-radius: 10px;
+  width: 292px;
+  height: 320px;
+  background-color: blueviolet;
+  object-fit: cover;
+}
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+}
+.accentText {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  display: flex;
+  justify-content: space-between;
+}
+.itemTitle {
+  margin-right: 15px;
+}
+.itemPrice {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.additionalText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  display: flex;
+  gap: 16px;
+}
+.itemRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.itemLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.itemDescription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 1; /* Number of lines to show */
+  text-overflow: ellipsis;
+}
+
+.btn {
+  border-radius: 200px;
+  /* padding: 16px 60px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 166px;
+  height: 56px;
+  background: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}

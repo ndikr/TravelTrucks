@@ -1,0 +1,23 @@
+.customDatePicker {
+  border-radius: 12px;
+  padding: 18px !important;
+  width: 100%;
+  background: var(--inputs);
+}
+
+.customDatePicker .MuiInput-underline:before,
+.customDatePicker .MuiInput-underline:after {
+  border-bottom: none; /* Remove underline */
+}
+
+.customDatePicker .MuiInput-underline:hover:before,
+.customDatePicker .MuiInput-underline:hover:after {
+  border-bottom: none !important; /* Remove underline on hover */
+}
+
+.customDatePicker .MuiInput-input {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+/* Calendar */

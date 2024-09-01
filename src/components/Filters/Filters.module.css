@@ -1,0 +1,43 @@
+.filtersBlock {
+}
+.title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  margin-bottom: 48px;
+}
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 48px;
+}
+
+.btn {
+  border-radius: 200px;
+  padding: 16px 60px;
+  /* width: 166px;
+  height: 56px; */
+  cursor: pointer;
+  border: 0;
+  background: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.clearBtn {
+  margin-top: 10px;
+  border-radius: 200px;
+  padding: 16px 60px;
+  /* width: 166px;
+  height: 56px; */
+  cursor: pointer;
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+}

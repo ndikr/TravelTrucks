@@ -1,0 +1,13 @@
+.logo {
+  /* margin-right: 450px; */
+  position: absolute;
+  left: 64px;
+  top: 24px;
+  color: var(--main);
+  width: 136px;
+  height: 16px;
+  font-size: 16px;
+}
+.logoAccent {
+  color: var(--text);
+}

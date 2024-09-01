@@ -1,0 +1,6 @@
+.searchFormBlock {
+  max-width: 360px;
+  gap: 48px;
+  display: flex;
+  flex-direction: column;
+}

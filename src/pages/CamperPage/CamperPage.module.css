@@ -1,0 +1,25 @@
+.camperPage {
+  padding: 48px 64px;
+}
+.switchers {
+  margin-top: 64px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  display: flex;
+  gap: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.switcher {
+}
+.switcher:hover {
+  color: var(--button);
+}
+.switchedContent {
+  display: flex;
+  padding: 44px 0;
+  gap: 32px;
+}

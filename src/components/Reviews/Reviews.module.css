@@ -1,0 +1,43 @@
+.reviews {
+  width: 631px;
+  background-color: azure;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+.review {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.author {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.avatar {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--badges);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--button);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.authorName {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+
+.comment {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}

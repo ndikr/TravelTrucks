@@ -1,0 +1,35 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 24px;
+  align-items: center;
+}
+.field {
+  border-radius: 12px;
+  padding: 0 18px;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  background: var(--inputs);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+.comment {
+  height: 82px;
+}
+.btn {
+  border-radius: 200px;
+  width: 166px;
+  height: 56px;
+  background: var(--button);
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-top: 24px;
+}

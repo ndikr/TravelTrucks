@@ -1,0 +1,27 @@
+.locationBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* height: 56px; */
+}
+.locationTitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--gray);
+}
+.locationChosen {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 18px 20px;
+  width: calc(100% - 40px);
+  background: var(--inputs);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+  border: 0;
+  background-color: aqua;
+}

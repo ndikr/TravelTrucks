@@ -1,0 +1,22 @@
+/* .filter {
+  border: 1px solid var(--gray-light);
+  border-radius: 12px;
+  padding: 16px;
+  width: 80px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  text-align: center;
+  color: var(--main);
+}
+
+.filter:hover {
+  border-color: var(--button);
+} */
