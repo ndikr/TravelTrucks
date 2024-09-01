@@ -16,7 +16,7 @@ export default function CamperInfo({ data }) {
             {data.location}
           </p>
         </div>
-        <p className={css.price}>€{data.price}</p>
+        <p className={css.price}>€{data.price},00</p>
       </div>
       <ul className={css.images}>
         {data.gallery.length > 0 &&

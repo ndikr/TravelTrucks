@@ -1,6 +1,5 @@
 .reviews {
   width: 631px;
-  background-color: azure;
   display: flex;
   flex-direction: column;
   gap: 44px;

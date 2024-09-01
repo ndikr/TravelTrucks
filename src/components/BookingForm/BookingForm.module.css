@@ -33,3 +33,7 @@
   color: var(--white);
   margin-top: 24px;
 }
+.error {
+  color: var(--button);
+  font-size: 14px;
+}

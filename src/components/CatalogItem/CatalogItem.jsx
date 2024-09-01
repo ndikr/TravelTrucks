@@ -17,7 +17,7 @@ export default function CatalogItem({ data }) {
           <div className={css.accentText}>
             <h4 className={css.itemTitle}>{data.name}</h4>
             <p className={css.itemPrice}>
-              €{data.price} <BsSuitHeart />
+              €{data.price},00 <BsSuitHeart />
             </p>
           </div>
           <div className={css.additionalText}>
@@ -41,6 +41,11 @@ export default function CatalogItem({ data }) {
             kitchen: data.kitchen,
             radio: data.radio,
             bathroom: data.bathroom,
+            TV: data.TV,
+            refrigerator: data.refrigerator,
+            microwave: data.microwave,
+            gas: data.gas,
+            water: data.water,
           }}
         ></Characteristics>
         <Link to={`/catalog/${data.id}`} className={css.btn}>

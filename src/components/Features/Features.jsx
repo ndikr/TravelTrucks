@@ -2,7 +2,6 @@ import css from "./Features.module.css";
 import Characteristics from "../Characteristics/Characteristics";
 import VehicleDetails from "../VehicleDetails/VehicleDetails";
 export default function Features({ data }) {
-  console.log(data);
   return (
     <div className={css.features}>
       <Characteristics
