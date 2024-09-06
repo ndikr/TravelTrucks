@@ -7,7 +7,9 @@
   border-bottom: 1px solid var(--gray-light); /* Adjust thickness and color */
   padding-bottom: 24px; /* Adjust spacing between text and underline */
 }
-
+/* .checkbox {
+  visibility: hidden;
+} */
 .options {
   margin-top: 24px;
   display: flex;
@@ -15,6 +17,7 @@
   gap: 8px;
   /* width: 300px; */
 }
+
 .option {
   display: flex;
   flex-direction: column;
@@ -48,14 +51,53 @@
   width: 80px;
   height: 64px; */
 }
-.option:hover {
-  border-color: var(--button);
+.option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
-.defaultColor {
-  border-color: var(--gray-light);
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+.option:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+.option input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
-.clickedColor {
-  background-color: blue;
+/* Show the checkmark when checked */
+.option input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.option .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+/* .option:hover {
   border-color: var(--button);
 }
+.option .checkbox:checked ~ .option {
+  background-color: #2196f3;
+} */

@@ -32,9 +32,11 @@ export default function FilterBlock({ title, items }) {
       <h4 className={css.filterTitle}>{title}</h4>
       <ul className={css.options}>
         {items.map((item, ind) => (
-          <li key={ind} className={clsx(css.option)} onClick={handleClick}>
+          <label key={ind} className={clsx(css.option)} onClick={handleClick}>
+            <input type="checkbox" className={css.checkbox}></input>
             <Filter name={item} size={32}></Filter>
-          </li>
+            <span className={css.checkmark}></span>
+          </label>
         ))}
       </ul>
     </>

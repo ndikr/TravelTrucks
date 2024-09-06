@@ -1,30 +1,42 @@
 .homePage {
-  /* width: 100%; */
   height: calc(100vh - 72px);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 64px;
+  padding-left: 40px;
   font-weight: 600;
   background-image: url("../../img/background.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
 .title {
-  font-size: 48px;
-  line-height: 67%;
+  font-size: 30px;
+  line-height: 100%;
+  margin-bottom: 12px;
   color: var(--inputs);
-  margin-bottom: 16px;
 }
 .description {
-  font-size: 24px;
-  line-height: 133%;
   color: var(--inputs);
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+@media screen and (min-width: 768px) {
+  .homePage {
+    padding-left: 64px;
+  }
+  .title {
+    font-size: 48px;
+    line-height: 67%;
+    margin-bottom: 16px;
+  }
+  .description {
+    font-size: 24px;
+    line-height: 133%;
+    margin-bottom: 40px;
+  }
 }
 .btn {
   border-radius: 200px;
-  /* padding: 16px 60px; */
   width: 173px;
   height: 56px;
   background: var(--button);

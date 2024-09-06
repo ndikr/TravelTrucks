@@ -4,16 +4,10 @@ import { useDispatch } from "react-redux";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { changeLocation } from "../../redux/filters/slice";
+import { cities } from "../../constants/constants";
+import InputAdornment from "@mui/material/InputAdornment";
+
 export default function Location() {
-  const cities = [
-    "Ukraine, Poltava",
-    "Ukraine, Kyiv",
-    "Ukraine, Kharkiv",
-    "Ukraine, Odesa",
-    "Ukraine, Dnipro",
-    "Ukraine, Sumy",
-    "Ukraine, Lviv",
-  ];
   const dispatch = useDispatch();
   return (
     <div className={css.locationBlock}>
@@ -32,6 +26,7 @@ export default function Location() {
                 fullWidth: true,
                 className: `${css.locationChosen}`,
               },
+              // input: <CiMap />,
             }}
             {...params}
           />

@@ -11,3 +11,8 @@
 .logoAccent {
   color: var(--text);
 }
+@media screen and (max-width: 768px) {
+  .logo {
+    top: 19px;
+  }
+}

@@ -13,12 +13,62 @@
   gap: 30px;
   margin-bottom: 48px;
 }
+.filterTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 24px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.option:hover {
+  border-color: var(--button);
+}
+.checkboxInput {
+  position: absolute;
+  display: none;
+}
+
+.checkboxInput:checked ~ .option {
+  border-color: var(--button);
+}
+
+.option {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+
+  width: 76px;
+  height: 64px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  gap: 8px;
+  border: 1px solid var(--gray-light);
+}
+
+.radioInput {
+  position: absolute;
+  display: none;
+}
+.radioInput:checked ~ .option {
+  border-color: var(--button);
+}
 
 .btn {
   border-radius: 200px;
   padding: 16px 60px;
-  /* width: 166px;
-  height: 56px; */
   cursor: pointer;
   border: 0;
   background: var(--button);
@@ -32,8 +82,6 @@
   margin-top: 10px;
   border-radius: 200px;
   padding: 16px 60px;
-  /* width: 166px;
-  height: 56px; */
   cursor: pointer;
   border: 0;
   font-weight: 500;

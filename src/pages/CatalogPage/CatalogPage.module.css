@@ -4,3 +4,8 @@
   padding: 48px 64px;
   gap: 64px;
 }
+.catalogContent {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}

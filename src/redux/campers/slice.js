@@ -21,6 +21,7 @@ export const campersSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchCampers.rejected, (state, action) => {
+        console.log(action.payload);
         state.error = action.payload;
         state.loading = false;
         state.items = [];

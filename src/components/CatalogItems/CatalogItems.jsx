@@ -19,18 +19,6 @@ export default function CatalogItems({ campers }) {
       ) : (
         <p>No campers found</p>
       )}
-      {/* <li className={css.item}>
-        <CatalogItem></CatalogItem>
-      </li>
-      <li className={css.item}>
-        <CatalogItem></CatalogItem>
-      </li>
-      <li className={css.item}>
-        <CatalogItem></CatalogItem>
-      </li>
-      <li className={css.item}>
-        <CatalogItem></CatalogItem>
-      </li> */}
     </ul>
   );
 }

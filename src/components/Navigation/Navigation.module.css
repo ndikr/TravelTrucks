@@ -5,3 +5,22 @@
 .active {
   color: var(--button-hover);
 }
+@media screen and (max-width: 768px) {
+  .navigation {
+    display: none;
+  }
+}
+
+.mobNavigation {
+  position: absolute;
+  background-color: var(--inputs);
+  border-radius: 6px;
+  border: 1px solid var(--light-gray);
+  padding: 8px;
+  top: 45px;
+  right: 24px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}

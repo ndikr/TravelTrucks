@@ -43,17 +43,14 @@ img {
   max-width: 100%;
 }
 
-/* button {
+button {
   font-weight: bold;
   text-align: center;
   text-decoration: none;
-  color: #fff;
-  background-color: #007bff;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  padding: 10px;
-} */
+  background-color: transparent;
+}
 a {
   text-decoration: none;
   color: black;
