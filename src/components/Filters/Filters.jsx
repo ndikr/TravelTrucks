@@ -1,8 +1,6 @@
 import css from "./Filters.module.css";
 import FilterBlock from "../FilterBlock/FilterBlock";
 import { useDispatch } from "react-redux";
-import { fetchCampers } from "./../../redux/campers/operations";
-import { clearFilters } from "../../redux/filters/slice";
 import { equipments, forms } from "../../constants/constants";
 import Filter from "../Filter/Filter";
 import { useState } from "react";
@@ -84,18 +82,6 @@ export default function Filters() {
           </ul>
         </li>
       </ul>
-      <button onClick={() => dispatch(fetchCampers())} className={css.btn}>
-        Search
-      </button>
-      <button
-        onClick={() => {
-          dispatch(clearFilters());
-          dispatch(fetchCampers());
-        }}
-        className={css.clearBtn}
-      >
-        Clear filters
-      </button>
     </div>
   );
 }

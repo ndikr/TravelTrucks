@@ -1,43 +1,51 @@
 .itemImg {
   border-radius: 10px;
-  width: 292px;
-  height: 320px;
-  background-color: blueviolet;
+
   object-fit: cover;
 }
+
 .itemInfo {
   display: flex;
   flex-direction: column;
-  gap: 24px;
   justify-content: space-between;
+  gap: 10px;
+}
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .accentText {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 133%;
   display: flex;
   justify-content: space-between;
 }
+
 .itemTitle {
-  margin-right: 15px;
+  margin-right: 8px;
 }
 .itemPrice {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
 }
+
 .additionalText {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 4px;
 }
 .itemRating {
   display: flex;
   align-items: center;
   gap: 4px;
 }
+
 .itemLocation {
   display: flex;
   align-items: center;
@@ -45,28 +53,67 @@
 }
 .itemDescription {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
+
   line-height: 150%;
   color: var(--text);
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  -webkit-line-clamp: 1; /* Number of lines to show */
+  -webkit-line-clamp: 3;
   text-overflow: ellipsis;
 }
-
 .btn {
   border-radius: 200px;
   /* padding: 16px 60px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 166px;
-  height: 56px;
+  width: 150px;
+  height: 45px;
   background: var(--button);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--white);
+}
+
+@media screen and (min-width: 768px) {
+  .itemImg {
+    width: 292px;
+    height: 320px;
+  }
+  .itemInfo {
+    gap: 24px;
+  }
+  .accentText {
+    font-size: 24px;
+  }
+  .itemTitle {
+    margin-right: 15px;
+  }
+  .itemPrice {
+    gap: 12px;
+  }
+  .additionalText {
+    font-size: 16px;
+    gap: 16px;
+    flex-direction: row;
+  }
+  .itemRating {
+    gap: 4px;
+  }
+  .itemLocation {
+    gap: 4px;
+  }
+  .itemDescription {
+    font-size: 16px;
+    -webkit-line-clamp: 1;
+  }
+  .btn {
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
+  }
 }

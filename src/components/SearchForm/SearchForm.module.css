@@ -1,6 +1,44 @@
 .searchFormBlock {
-  max-width: 360px;
-  gap: 48px;
+  /* max-width: 360px; */
+  /* min-width: calc(100vw - 30px); */
+  gap: 30px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
+  padding-right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .searchFormBlock {
+    gap: 48px;
+    padding-top: 0px;
+    max-width: 360px;
+  }
+}
+/* @media screen and (max-width: 768px) {
+  .searchFormBlock {
+    width: 100vw;
+  }
+} */
+.btn {
+  border-radius: 200px;
+  padding: 16px 60px;
+  cursor: pointer;
+  border: 0;
+  background: var(--button);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+.clearBtn {
+  margin-top: 10px;
+  border-radius: 200px;
+  padding: 16px 60px;
+  cursor: pointer;
+  border: 0;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
 }

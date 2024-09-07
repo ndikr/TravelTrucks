@@ -1,21 +1,21 @@
 .locationBlock {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   /* height: 56px; */
 }
 .locationTitle {
   font-weight: 400;
-  font-size: 16px;
   line-height: 150%;
   color: var(--gray);
+  font-size: 14px;
 }
 .locationChosen {
   display: flex;
   align-items: center;
-  gap: 8px;
   border-radius: 12px;
-  padding: 18px 20px;
+  padding: 10px 10px;
+  background-color: antiquewhite;
   /* width: calc(100% - 40px); */
   background: var(--inputs);
   font-weight: 400;
@@ -23,4 +23,16 @@
   line-height: 150%;
   color: var(--main);
   border: 0;
+}
+@media screen and (min-width: 768px) {
+  .locationBlock {
+    gap: 16px;
+  }
+
+  .locationTitle {
+    font-size: 16px;
+  }
+  .locationChosen {
+    padding: 18px 20px;
+  }
 }
