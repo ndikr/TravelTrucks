@@ -49,14 +49,11 @@ export default function CatalogPage() {
           {searchFormVisible ? "close" : "filter"}
         </button>
       )}
-      {!mobileVersion ||
-        (searchFormVisible && (
-          <SearchForm setSearchFormVisible={setSearchFormVisible}></SearchForm>
-        ))}
-      {searchFormVisible && (
+      {(!mobileVersion || searchFormVisible) && (
         <SearchForm setSearchFormVisible={setSearchFormVisible}></SearchForm>
       )}
-      {!searchFormVisible && (
+
+      {(!mobileVersion || !searchFormVisible) && (
         <div className={css.catalogContent}>
           {isLoading ? (
             <Loader></Loader>
