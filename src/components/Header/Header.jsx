@@ -13,7 +13,10 @@ export default function Header() {
   return (
     <header className={css.header}>
       <Logo></Logo>
-      <Navigation mobMenuMod={mobMenuOpen}></Navigation>
+      <Navigation
+        mobMenuMod={mobMenuOpen}
+        toggleMobMenu={setMobMenuOpen}
+      ></Navigation>
       <button className={css.btn} onClick={() => setMobMenuOpen(!mobMenuOpen)}>
         <TiThMenu />
       </button>
