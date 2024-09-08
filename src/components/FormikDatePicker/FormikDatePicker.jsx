@@ -14,7 +14,7 @@ export default function FormikDatePicker({ field, form, ...props }) {
       slotProps={{
         textField: {
           variant: "standard",
-          fullWidth: true,
+          // fullWidth: true,
           className: "customDatePicker",
           placeholder: "Booking date*",
         },

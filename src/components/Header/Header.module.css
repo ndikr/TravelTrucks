@@ -2,23 +2,22 @@
   display: flex;
   /* position: fixed; */
   /* height: 72px; */
+  width: 100%;
+  box-sizing: border-box;
   top: 0;
-  justify-content: center;
+  /* justify-content: center; */
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  padding: 24px 0;
+  padding: 24px;
   background-color: var(--inputs);
 }
 
-@media screen and (max-width: 768px) {
-  .header {
-    justify-content: space-between;
-    position: relative;
-    padding-right: 24px;
-  }
-}
-
 @media screen and (min-width: 768px) {
+  .header {
+    height: 72px;
+    justify-content: center;
+  }
   .btn {
     display: none;
   }

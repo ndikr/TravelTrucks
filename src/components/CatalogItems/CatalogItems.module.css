@@ -16,8 +16,14 @@
 
 @media screen and (min-width: 768px) {
   .item {
-    flex-direction: row;
     gap: 24px;
+    padding: 18px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .item {
+    flex-direction: row;
     padding: 24px;
   }
 }

@@ -47,7 +47,7 @@ export default function BookingForm() {
           ></Field>
           <ErrorMessage className={css.error} name="email" component="span" />
           <Field
-            // className={css.field}
+            className={css.field}
             name="bookingDate"
             component={FormikDatePicker}
             // fullWidth

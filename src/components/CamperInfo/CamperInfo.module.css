@@ -1,22 +1,23 @@
 .info {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 14px;
 }
 .mainInfo {
   /* display: flex;
   flex-direction: column; */
 }
 .title {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  font-size: 20px;
 }
 .additionalText {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   display: flex;
   gap: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   color: var(--main);
 }
 .rating {
@@ -33,23 +34,33 @@
 }
 .price {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
   line-height: 133%;
   color: var(--main);
 }
-.images {
-  display: flex;
-  gap: 16px;
-}
-.img {
-  border-radius: 10px;
-  width: 292px;
-  height: 312px;
-  object-fit: none;
-}
 .description {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   color: var(--text);
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    gap: 24px;
+  }
+  .title {
+    margin-bottom: 8px;
+    font-size: 24px;
+  }
+  .additionalText {
+    margin-bottom: 16px;
+    font-size: 16px;
+  }
+  .price {
+    font-size: 24px;
+  }
+  .description {
+    font-size: 16px;
+  }
 }

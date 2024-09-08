@@ -14,17 +14,18 @@
 }
 .filterTitle {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 120%;
   color: var(--main);
   border-bottom: 1px solid var(--gray-light);
   padding-bottom: 24px;
 }
 .options {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
   margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
 }
 
 .option:hover {
@@ -40,18 +41,16 @@
 }
 
 .option {
-  padding: 16px 18px;
+  padding: 10px 7px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-
-  width: 76px;
-  height: 64px;
+  max-height: 50px;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
+  font-size: 13px;
+  line-height: 100%;
   letter-spacing: -0.01em;
   gap: 8px;
   border: 1px solid var(--gray-light);
@@ -63,4 +62,19 @@
 }
 .radioInput:checked ~ .option {
   border-color: var(--button);
+}
+
+@media screen and (min-width: 1440px) {
+  .filterTitle {
+    font-size: 20px;
+  }
+  .option {
+    width: 76px;
+    height: 64px;
+    font-size: 16px;
+  }
+  .options {
+    gap: 8px;
+    min-width: 360px;
+  }
 }

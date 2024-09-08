@@ -1,13 +1,13 @@
 .navigation {
-  display: flex;
-  gap: 32px;
+  display: none;
 }
 .active {
   color: var(--button-hover);
 }
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   .navigation {
-    display: none;
+    display: flex;
+    gap: 32px;
   }
 }
 

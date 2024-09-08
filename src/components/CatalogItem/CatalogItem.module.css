@@ -80,6 +80,32 @@
 }
 
 @media screen and (min-width: 768px) {
+  .itemInfo {
+    gap: 18px;
+  }
+  .accentText {
+    font-size: 18px;
+  }
+  .itemTitle {
+    margin-right: 15px;
+  }
+  .itemPrice {
+    gap: 8px;
+  }
+  .additionalText {
+    font-size: 16px;
+    gap: 6px;
+  }
+  .itemDescription {
+    font-size: 16px;
+  }
+  .btn {
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
   .itemImg {
     width: 292px;
     height: 320px;
@@ -90,14 +116,10 @@
   .accentText {
     font-size: 24px;
   }
-  .itemTitle {
-    margin-right: 15px;
-  }
   .itemPrice {
     gap: 12px;
   }
   .additionalText {
-    font-size: 16px;
     gap: 16px;
     flex-direction: row;
   }
@@ -108,12 +130,6 @@
     gap: 4px;
   }
   .itemDescription {
-    font-size: 16px;
     -webkit-line-clamp: 1;
-  }
-  .btn {
-    width: 166px;
-    height: 56px;
-    font-size: 16px;
   }
 }

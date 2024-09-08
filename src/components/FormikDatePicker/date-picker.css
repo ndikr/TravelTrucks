@@ -1,6 +1,6 @@
 .customDatePicker {
   border-radius: 12px;
-  padding: 18px !important;
+  padding: 6px 18px !important;
   width: 100%;
   background: var(--inputs);
 }
@@ -17,7 +17,15 @@
 
 .customDatePicker .MuiInput-input {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
+  color: var(--gray);
 }
-/* Calendar */
+@media screen and (min-width: 768px) {
+  .customDatePicker {
+    padding: 18px !important;
+  }
+  .customDatePicker .MuiInput-input {
+    font-size: 16px;
+  }
+}

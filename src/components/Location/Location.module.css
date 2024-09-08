@@ -15,8 +15,6 @@
   align-items: center;
   border-radius: 12px;
   padding: 10px 10px;
-  background-color: antiquewhite;
-  /* width: calc(100% - 40px); */
   background: var(--inputs);
   font-weight: 400;
   font-size: 16px;

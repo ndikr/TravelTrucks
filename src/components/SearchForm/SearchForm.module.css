@@ -1,24 +1,19 @@
 .searchFormBlock {
-  /* max-width: 360px; */
-  /* min-width: calc(100vw - 30px); */
   gap: 30px;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
-  padding-right: 20px;
 }
+
 @media screen and (min-width: 768px) {
   .searchFormBlock {
     gap: 48px;
     padding-top: 0px;
     max-width: 360px;
+    padding-right: 20px;
   }
 }
-/* @media screen and (max-width: 768px) {
-  .searchFormBlock {
-    width: 100vw;
-  }
-} */
+
 .btn {
   border-radius: 200px;
   padding: 16px 60px;
@@ -41,4 +36,5 @@
   font-size: 16px;
   line-height: 150%;
   letter-spacing: -0.01em;
+  background-color: var(--gray-light);
 }

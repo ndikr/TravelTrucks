@@ -1,7 +1,6 @@
 .catalog {
   display: flex;
   padding: 48px 30px;
-
   /* gap: 64px; */
 }
 .catalogContent {
@@ -22,9 +21,14 @@
 
 @media screen and (min-width: 768px) {
   .catalog {
-    padding: 48px 64px;
+    padding: 30px 40px;
   }
   .filterMenuBtn {
     display: none;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .catalog {
+    padding: 48px 64px;
   }
 }

@@ -9,7 +9,7 @@ export default function Navigation({ mobMenuMod }) {
       <ul className={css.mobNavigation}>
         <li>
           <NavLink
-            // className={({ isActive }) => (isActive ? css.active : "")}
+            className={({ isActive }) => (isActive ? css.active : "")}
             to="/"
           >
             Home
@@ -17,7 +17,7 @@ export default function Navigation({ mobMenuMod }) {
         </li>
         <li>
           <NavLink
-            // className={({ isActive }) => (isActive ? css.active : "")}
+            className={({ isActive }) => (isActive ? css.active : "")}
             to="/catalog"
           >
             Catalog
@@ -30,7 +30,7 @@ export default function Navigation({ mobMenuMod }) {
       <ul className={css.navigation}>
         <li>
           <NavLink
-            // className={({ isActive }) => (isActive ? css.active : "")}
+            className={({ isActive }) => (isActive ? css.active : "")}
             to="/"
           >
             Home
@@ -38,7 +38,7 @@ export default function Navigation({ mobMenuMod }) {
         </li>
         <li>
           <NavLink
-            // className={({ isActive }) => (isActive ? css.active : "")}
+            className={({ isActive }) => (isActive ? css.active : "")}
             to="/catalog"
           >
             Catalog

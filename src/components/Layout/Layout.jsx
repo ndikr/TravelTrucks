@@ -6,12 +6,12 @@ import { Suspense } from "react";
 
 export default function Layout({ children }) {
   return (
-    <div className={css.layout}>
+    <>
       <ToastContainer autoClose={2000} />
       <Header />
       <Suspense fallback={null}>
         <div className={css.content}>{children}</div>
       </Suspense>
-    </div>
+    </>
   );
 }
