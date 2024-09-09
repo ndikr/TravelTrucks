@@ -32,39 +32,51 @@ export default function BookingForm() {
         validationSchema={formSchema}
       >
         <Form className={css.form}>
-          <Field
-            className={css.field}
-            placeholder={"Name*"}
-            type="text"
-            name="name"
-          ></Field>
-          <ErrorMessage className={css.error} name="name" component="span" />
-          <Field
-            className={css.field}
-            placeholder={"Email*"}
-            type="text"
-            name="email"
-          ></Field>
-          <ErrorMessage className={css.error} name="email" component="span" />
-          <Field
-            className={css.field}
-            name="bookingDate"
-            component={FormikDatePicker}
-            // fullWidth
-          />
+          <label className={css.label} htmlFor="name">
+            <Field
+              className={css.field}
+              placeholder={"Name*"}
+              type="text"
+              name="name"
+            ></Field>
+            <ErrorMessage className={css.error} name="name" component="span" />
+          </label>
+          <label className={css.label} htmlFor="email">
+            <Field
+              className={css.field}
+              placeholder={"Email*"}
+              type="text"
+              name="email"
+            ></Field>
+            <ErrorMessage className={css.error} name="email" component="span" />
+          </label>
+          <label className={css.label} htmlFor="bookingDate">
+            <Field
+              className={css.field}
+              name="bookingDate"
+              component={FormikDatePicker}
+              // fullWidth
+            />
 
-          <ErrorMessage
-            className={css.error}
-            name="bookingDate"
-            component="span"
-          />
-          <Field
-            className={clsx(css.field, css.comment)}
-            placeholder={"Comment"}
-            type="text"
-            name="comment"
-          ></Field>
-          <ErrorMessage className={css.error} name="comment" component="span" />
+            <ErrorMessage
+              className={css.error}
+              name="bookingDate"
+              component="span"
+            />
+          </label>
+          <label className={css.label} htmlFor="comment">
+            <Field
+              className={clsx(css.field, css.comment)}
+              placeholder={"Comment"}
+              type="text"
+              name="comment"
+            ></Field>
+            <ErrorMessage
+              className={css.error}
+              name="comment"
+              component="span"
+            />
+          </label>
           <button className={css.btn} type="submit">
             Send
           </button>
