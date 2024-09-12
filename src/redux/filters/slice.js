@@ -35,17 +35,17 @@ export const filtersSlice = createSlice({
       state.location = "";
       state.form = "";
       state.equipment = {
-        automatic: false,
-        petrol: false,
-        ac: false,
-        bathroom: false,
-        kitchen: false,
-        tv: false,
-        radio: false,
-        refrigerator: false,
-        microwave: false,
-        gas: false,
-        water: false,
+        // automatic: false,
+        // petrol: false,
+        // ac: false,
+        // bathroom: false,
+        // kitchen: false,
+        // tv: false,
+        // radio: false,
+        // refrigerator: false,
+        // microwave: false,
+        // gas: false,
+        // water: false,
       };
     },
   },

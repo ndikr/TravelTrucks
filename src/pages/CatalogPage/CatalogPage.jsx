@@ -9,16 +9,17 @@ import { selectFilters } from "../../redux/filters/selectors";
 import { selectLoading, selectError } from "../../redux/campers/selectors";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
+import handleEquipmentFilter from "../../hooks/handleEquipmentFilter";
 export default function CatalogPage() {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
   const campers = useSelector(selectCampers);
-
-  // const filters = useSelector(selectFilters);
+  let page = 1;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchCampers());
+    dispatch(fetchCampers({ page: 1, limit: 4 }));
   }, [dispatch]);
+  function handleLoadMore() {}
   const [searchFormVisible, setSearchFormVisible] = useState(
     window.innerWidth >= 768
   );
@@ -60,7 +61,12 @@ export default function CatalogPage() {
           ) : isError ? (
             <Error></Error>
           ) : (
-            <CatalogItems campers={campers}></CatalogItems>
+            <>
+              <CatalogItems campers={campers}></CatalogItems>
+              <button className={css.loadMoreBtn} onClick={handleLoadMore}>
+                Load More
+              </button>
+            </>
           )}
         </div>
       )}

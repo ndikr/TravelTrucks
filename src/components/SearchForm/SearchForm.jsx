@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 
 export default function SearchForm({ cities, setSearchFormVisible }) {
   const dispatch = useDispatch();
-
   return (
     <div className={css.searchFormBlock}>
       <Location cities={cities}></Location>
@@ -15,7 +14,7 @@ export default function SearchForm({ cities, setSearchFormVisible }) {
       <div>
         <button
           onClick={() => {
-            dispatch(fetchCampers());
+            dispatch(fetchCampers({ page: 1, limit: 4 }));
             setSearchFormVisible(false);
           }}
           className={css.btn}
