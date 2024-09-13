@@ -20,12 +20,12 @@ const filtersConfig = {
   key: "filter",
   storage,
 };
-const persistedCampersReducer = persistReducer(campersConfig, campersReducer);
+// const persistedCampersReducer = persistReducer(campersConfig, campersReducer);
 // const persistedFiltersReducer = persistReducer(filtersConfig, filtersReducer);
 
 export const store = configureStore({
   reducer: {
-    campers: persistedCampersReducer,
+    campers: campersReducer,
     filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>

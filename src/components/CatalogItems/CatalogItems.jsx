@@ -10,15 +10,11 @@ import { useDispatch, useSelector } from "react-redux";
 export default function CatalogItems({ campers }) {
   return (
     <ul className={css.catalogItemsBlock}>
-      {campers.length > 0 ? (
-        campers.map((camper) => (
-          <li key={camper.id} className={css.item}>
-            <CatalogItem data={camper}></CatalogItem>
-          </li>
-        ))
-      ) : (
-        <p>No campers found</p>
-      )}
+      {campers.map((camper) => (
+        <li key={camper.id} className={css.item}>
+          <CatalogItem data={camper}></CatalogItem>
+        </li>
+      ))}
     </ul>
   );
 }
