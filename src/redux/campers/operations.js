@@ -6,13 +6,31 @@ axios.defaults.baseURL = "https://66b1f8e71ca8ad33d4f5f63e.mockapi.io";
 export const fetchCampers = createAsyncThunk(
   "fetchCampers",
   async ({ page, limit }, thunkAPI) => {
-    console.log(page);
     try {
-      const filters = handleEquipmentFilter(thunkAPI.getState().filters);
+      // const filters = handleEquipmentFilter(thunkAPI.getState().filters);
+      // console.log(filters);
       const response = await axios.get(`/campers`, {
         params: {
           page,
           limit,
+          // ...filters,
+        },
+      });
+      console.log(response.data);
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+export const fetchFilteredCampers = createAsyncThunk(
+  "fetchFilteredCampers",
+  async (_, thunkAPI) => {
+    try {
+      const filters = handleEquipmentFilter(thunkAPI.getState().filters);
+      console.log(filters);
+      const response = await axios.get(`/campers`, {
+        params: {
           ...filters,
         },
       });
@@ -23,7 +41,6 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
-
 export const fetchCamperById = createAsyncThunk(
   "fetchCamperById",
   async (id, thunkAPI) => {

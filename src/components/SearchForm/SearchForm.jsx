@@ -2,7 +2,10 @@ import css from "./SearchForm.module.css";
 import Location from "../Location/Location";
 import Filters from "../Filters/Filters";
 import { clearFilters } from "../../redux/filters/slice";
-import { fetchCampers } from "./../../redux/campers/operations";
+import {
+  fetchCampers,
+  fetchFilteredCampers,
+} from "./../../redux/campers/operations";
 import { useDispatch } from "react-redux";
 
 export default function SearchForm({ cities, setSearchFormVisible }) {
@@ -14,7 +17,8 @@ export default function SearchForm({ cities, setSearchFormVisible }) {
       <div>
         <button
           onClick={() => {
-            dispatch(fetchCampers({ page: 1, limit: 4 }));
+            dispatch(fetchFilteredCampers());
+            // dispatch(fetchCampers({ page: 1, limit: 4 }));
             setSearchFormVisible(false);
           }}
           className={css.btn}
