@@ -15,6 +15,7 @@ export const campersSlice = createSlice({
     itemsPerPage: 4,
     error: false,
     loading: false,
+    favorites: [],
   },
   extraReducers: (builder) =>
     builder
@@ -73,6 +74,21 @@ export const campersSlice = createSlice({
         state.error = action.payload;
         state.loading = false;
       }),
+  reducers: {
+    setFavorite(state, action) {
+      state.items = state.items;
+      const existingItemIndex = state.favorites.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (existingItemIndex !== -1) {
+        state.favorites = state.favorites.filter(
+          (item) => item.id !== action.payload.id
+        );
+      } else {
+        state.favorites = [...state.favorites, action.payload];
+      }
+    },
+  },
 });
-
+export const { setFavorite } = campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

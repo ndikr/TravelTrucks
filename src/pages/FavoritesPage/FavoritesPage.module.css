@@ -1,0 +1,26 @@
+.page {
+  padding: 20px;
+  text-align: center;
+}
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.item {
+  /* width: 100px;
+  height: 200px; */
+  max-width: 300px;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 16px;
+  /* height: 368px; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  /* justify-content: space-between; */
+  /* background-color: var(--); */
+  box-sizing: border-box;
+  /* position: relative; */
+}

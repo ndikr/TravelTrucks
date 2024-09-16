@@ -10,7 +10,9 @@ import { changeEquipment, changeForm } from "../../redux/filters/slice";
 export default function Filters() {
   const dispatch = useDispatch();
   let checkedEquipment = useSelector(selectEquipment);
+  console.log(checkedEquipment);
   let selectedForm = useSelector(selectForm);
+  console.log(selectedForm);
   function handleEquipmentChange(equipment) {
     checkedEquipment = {
       ...checkedEquipment,
@@ -44,6 +46,7 @@ export default function Filters() {
                     id={`checkbox-${ind}`}
                     type="checkbox"
                     checked={checkedEquipment[equipment]}
+                    // checked={checkedEquipment[equipment]}
                     // checked={checkedEquipment.contain(equipment)}
                     onChange={() => handleEquipmentChange(equipment)}
                     className={css.checkboxInput}

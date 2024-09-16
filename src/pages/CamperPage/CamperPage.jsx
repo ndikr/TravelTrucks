@@ -1,19 +1,22 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperById } from "../../redux/campers/operations";
-import { useRef } from "react";
+import { useRef, Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { selectCamperById } from "../../redux/campers/selectors";
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
+
 import CamperInfo from "../../components/CamperInfo/CamperInfo";
 import css from "./CamperPage.module.css";
 import clsx from "clsx";
 import BookingBlock from "../../components/BookingBlock/BookingBlock";
 import Features from "../../components/Features/Features";
 import Reviews from "../../components/Reviews/Reviews";
+import { NavLink } from "react-router-dom";
 export default function CamperPage() {
   const id = useParams().id;
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(fetchCamperById(id));
   // }, [dispatch]);
@@ -32,6 +35,26 @@ export default function CamperPage() {
         handleScrollToReviews={handleScrollToReviews}
       ></CamperInfo>
       <ul className={css.switchers}>
+        {/* <li>
+          <NavLink
+            // className={({ isActive }) => {
+            //   return isActive && css.active;
+            // }}
+            to="features"
+          >
+            Features
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            // className={({ isActive }) => {
+            //   return isActive && css.active;
+            // }}
+            to="reviews"
+          >
+            Reviews
+          </NavLink>
+        </li> */}
         <li
           className={clsx(css.switcher, {
             [css.chosenTab]: chosenTab === "features",

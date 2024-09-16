@@ -1,12 +1,34 @@
 import { BsSuitHeart } from "react-icons/bs";
+import { BsSuitHeartFill } from "react-icons/bs";
+import { setFavorite } from "../../redux/campers/slice";
 import { FaStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import css from "./CatalogItem.module.css";
 import { CiMap } from "react-icons/ci";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectFavorites } from "../../redux/campers/selectors";
 import Characteristics from "../Characteristics/Characteristics";
 export default function CatalogItem({ data }) {
+  const dispatch = useDispatch();
+  const existingFavorites = useSelector(selectFavorites);
+  function checkIfIsFavorite(item) {
+    const itemIndex = existingFavorites.findIndex(
+      (existingItem) => existingItem.id === item.id
+    );
+    if (itemIndex !== -1) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+  function handleSettingFavorite(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    dispatch(setFavorite(data));
+  }
   return (
-    <>
+    <Link to={`/catalog/${data.id}`}>
       <img
         className={css.itemImg}
         src={data.gallery[0].thumb}
@@ -17,14 +39,21 @@ export default function CatalogItem({ data }) {
           <div className={css.accentText}>
             <h4 className={css.itemTitle}>{data.name}</h4>
             <p className={css.itemPrice}>
-              €{data.price},00 <BsSuitHeart />
+              €{data.price},00{" "}
+              <button onClick={handleSettingFavorite}>
+                {checkIfIsFavorite(data) ? (
+                  <BsSuitHeartFill color="#E44848" />
+                ) : (
+                  <BsSuitHeart />
+                )}
+              </button>
             </p>
           </div>
           <div className={css.additionalText}>
-            <p className={css.itemRating}>
+            <Link to={`/catalog/${data.id}`} className={css.itemRating}>
               <FaStar color="#FFC531" />
               {data.rating}({data.reviews.length} Reviews)
-            </p>
+            </Link>
             <p className={css.itemLocation}>
               <CiMap />
               {data.location}
@@ -48,10 +77,8 @@ export default function CatalogItem({ data }) {
             water: data.water,
           }}
         ></Characteristics>
-        <Link to={`/catalog/${data.id}`} className={css.btn}>
-          Show more
-        </Link>
+        {/* <p className={css.btn}>Show more</p> */}
       </div>
-    </>
+    </Link>
   );
 }

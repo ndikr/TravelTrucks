@@ -1,9 +1,7 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
-// import { useSelector } from "react-redux";
-// import { selectLoginStatus } from "../../redux/auth/selectors";
+import { BsSuitHeart } from "react-icons/bs";
 export default function Navigation({ mobMenuMod, toggleMobMenu }) {
-  // const isLoggedIn = useSelector(selectLoginStatus);
   return (
     <nav>
       <ul className={mobMenuMod ? css.mobNavigation : css.navigation}>
@@ -23,6 +21,15 @@ export default function Navigation({ mobMenuMod, toggleMobMenu }) {
             onClick={() => toggleMobMenu(false)}
           >
             Catalog
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/favorites"
+            onClick={() => toggleMobMenu(false)}
+          >
+            {mobMenuMod ? "Favorites" : <BsSuitHeart size="25px" />}
           </NavLink>
         </li>
       </ul>

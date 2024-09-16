@@ -5,7 +5,7 @@ export const selectError = (state) => state.campers.error;
 export const selectTotal = (state) => state.campers.totalItems;
 export const selectCurrentPage = (state) => state.campers.currentPage;
 export const selectItemsPerPage = (state) => state.campers.itemsPerPage;
-
+export const selectFavorites = (state) => state.campers.favorites;
 export const selectCamperById = (state, id) => {
   return state.campers.items.find((camper) => camper.id === id);
 };

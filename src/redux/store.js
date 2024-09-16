@@ -15,17 +15,18 @@ import {
 const campersConfig = {
   key: "campers",
   storage,
+  whitelist: ["favorites"],
 };
 const filtersConfig = {
   key: "filter",
   storage,
 };
-// const persistedCampersReducer = persistReducer(campersConfig, campersReducer);
+const persistedCampersReducer = persistReducer(campersConfig, campersReducer);
 // const persistedFiltersReducer = persistReducer(filtersConfig, filtersReducer);
 
 export const store = configureStore({
   reducer: {
-    campers: campersReducer,
+    campers: persistedCampersReducer,
     filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>

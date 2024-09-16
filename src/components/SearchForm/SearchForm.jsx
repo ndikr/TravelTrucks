@@ -28,7 +28,7 @@ export default function SearchForm({ cities, setSearchFormVisible }) {
         <button
           onClick={() => {
             dispatch(clearFilters());
-            dispatch(fetchCampers());
+            dispatch(fetchCampers({ page: 1, limit: 4 }));
             setSearchFormVisible(false);
           }}
           className={css.clearBtn}

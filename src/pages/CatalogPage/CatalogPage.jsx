@@ -24,7 +24,6 @@ export default function CatalogPage() {
   const totalItems = useSelector(selectTotal);
   const currentPage = useSelector(selectCurrentPage);
   const itemsPerPage = useSelector(selectItemsPerPage);
-  console.log(campers.length, totalItems);
   const dispatch = useDispatch();
   const isMounted = useRef(false);
 

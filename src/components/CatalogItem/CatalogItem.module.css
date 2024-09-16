@@ -1,7 +1,7 @@
 .itemImg {
   border-radius: 10px;
-
   object-fit: cover;
+  margin-bottom: 10px;
 }
 
 .itemInfo {
@@ -21,10 +21,15 @@
   line-height: 133%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 .itemTitle {
   margin-right: 8px;
+}
+.itemTitle:hover {
+  color: var(--button);
+  text-decoration: underline;
 }
 .itemPrice {
   display: flex;
@@ -45,7 +50,10 @@
   align-items: center;
   gap: 4px;
 }
-
+.itemRating:hover {
+  color: var(--button);
+  text-decoration: underline;
+}
 .itemLocation {
   display: flex;
   align-items: center;
@@ -77,6 +85,8 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--white);
+  /* position: absolute;
+  bottom: 20px; */
 }
 
 @media screen and (min-width: 768px) {
