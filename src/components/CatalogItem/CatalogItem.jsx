@@ -50,7 +50,10 @@ export default function CatalogItem({ data }) {
             </p>
           </div>
           <div className={css.additionalText}>
-            <Link to={`/catalog/${data.id}`} className={css.itemRating}>
+            <Link
+              to={`/catalog/${data.id}?scrollTo=reviews`}
+              className={css.itemRating}
+            >
               <FaStar color="#FFC531" />
               {data.rating}({data.reviews.length} Reviews)
             </Link>

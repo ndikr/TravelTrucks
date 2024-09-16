@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom";
 import { selectCamperById } from "../../redux/campers/selectors";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
-
+import { useSearchParams } from "react-router-dom";
 import CamperInfo from "../../components/CamperInfo/CamperInfo";
 import css from "./CamperPage.module.css";
 import clsx from "clsx";
@@ -16,16 +16,25 @@ import Reviews from "../../components/Reviews/Reviews";
 import { NavLink } from "react-router-dom";
 export default function CamperPage() {
   const id = useParams().id;
+  const [searchParams] = useSearchParams();
+  const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
+  const [chosenTab, setChosenTab] = useState("features");
+  const handleScrollToReviews = () => {
+    reviewsRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the element smoothly
+  };
+  useEffect(() => {
+    const scrollTo = searchParams.get("scrollTo");
+    if (scrollTo === "reviews") {
+      setChosenTab("reviews");
+      handleScrollToReviews();
+    }
+  }, [searchParams]);
+
   // const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch(fetchCamperById(id));
   // }, [dispatch]);
   const data = useSelector((state) => selectCamperById(state, id));
-  const [chosenTab, setChosenTab] = useState("features");
-  const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
-  const handleScrollToReviews = () => {
-    reviewsRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the element smoothly
-  };
 
   return (
     <div className={css.camperPage}>
