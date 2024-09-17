@@ -1,13 +1,13 @@
 .reviews {
-  width: 631px;
   display: flex;
   flex-direction: column;
-  gap: 44px;
+  gap: 20px;
+  /* width: 90%; */
 }
 .review {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 .author {
   display: flex;
@@ -16,11 +16,11 @@
 }
 .avatar {
   border-radius: 60px;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   background: var(--badges);
   font-weight: 600;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 133%;
   color: var(--button);
   display: flex;
@@ -29,14 +29,39 @@
 }
 .authorName {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   color: var(--main);
 }
 
 .comment {
   font-weight: 400;
-  font-size: 16px;
+  font-size: 12px;
   line-height: 150%;
   color: var(--text);
+}
+
+@media screen and (min-width: 768px) {
+  .reviews {
+    gap: 44px;
+    flex-basis: 100%;
+  }
+  .review {
+    gap: 16px;
+  }
+  .author {
+    gap: 16px;
+  }
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+  .authorName {
+    font-size: 16px;
+  }
+
+  .comment {
+    font-size: 16px;
+  }
 }

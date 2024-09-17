@@ -43,5 +43,6 @@
     flex-direction: row;
     padding: 44px 0;
     gap: 32px;
+    flex-grow: 1 2;
   }
 }
