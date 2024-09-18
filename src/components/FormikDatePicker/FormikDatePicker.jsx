@@ -1,24 +1,16 @@
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import dayjs from "dayjs";
-import "./date-picker.css";
-
-export default function FormikDatePicker({ field, form, ...props }) {
-  const { setFieldValue } = form;
-  const { name, value } = field;
-  return (
+import DatePicker from "react-datepicker";
+import css from "./FormikDatePicker.module.css";
+const FormikDatePicker = ({ field, form, ...props }) => (
+  // OR const { setFieldValue } = form;
+  // OR const { value, name } = field;
+  <div>
     <DatePicker
-      value={value ? dayjs(value) : null} // Convert to dayjs object if a value exists
-      onChange={(date) =>
-        setFieldValue(name, date ? date.format("YYYY-MM-DD") : null)
-      }
-      slotProps={{
-        textField: {
-          variant: "standard",
-          // fullWidth: true,
-          className: "customDatePicker",
-          placeholder: "Booking date*",
-        },
-      }}
+      className={css.field}
+      dateFormat="dd/MM/yyyy"
+      {...field}
+      selected={field.value}
+      onChange={(val) => form.setFieldValue(field.name, val)}
     />
-  );
-}
+  </div>
+);
+export default FormikDatePicker;

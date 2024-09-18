@@ -50,13 +50,14 @@ export default function CatalogItem({ data }) {
             </p>
           </div>
           <div className={css.additionalText}>
-            <Link
+            {/* <Link
               to={`/catalog/${data.id}?scrollTo=reviews`}
               className={css.itemRating}
+              onClick={(e) => e.stopPropagation()}
             >
               <FaStar color="#FFC531" />
               {data.rating}({data.reviews.length} Reviews)
-            </Link>
+            </Link> */}
             <p className={css.itemLocation}>
               <CiMap />
               {data.location}

@@ -1,11 +1,17 @@
 import css from "./BookingForm.module.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import * as Yup from "yup";
 import FormikDatePicker from "../FormikDatePicker/FormikDatePicker";
 import { clsx } from "clsx";
 import { toast } from "react-toastify";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import "./react-datepicker.css";
+
+import { useState } from "react";
+
 export default function BookingForm() {
   const formSchema = Yup.object().shape({
     name: Yup.string()
@@ -24,13 +30,14 @@ export default function BookingForm() {
     toast("Successfully booked");
     actions.resetForm();
   }
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Formik
-        initialValues={{ name: "", email: "", bookingDate: "", comment: "" }}
-        onSubmit={handleSubmit}
-        validationSchema={formSchema}
-      >
+    <Formik
+      initialValues={{ name: "", email: "", bookingDate: "", comment: "" }}
+      onSubmit={handleSubmit}
+      validationSchema={formSchema}
+    >
+      {({ setFieldValue, values }) => (
         <Form className={css.form}>
           <label className={css.label} htmlFor="name">
             <Field
@@ -38,50 +45,62 @@ export default function BookingForm() {
               placeholder={"Name*"}
               type="text"
               name="name"
-            ></Field>
+            />
             <ErrorMessage className={css.error} name="name" component="span" />
           </label>
+
           <label className={css.label} htmlFor="email">
             <Field
               className={css.field}
               placeholder={"Email*"}
               type="text"
               name="email"
-            ></Field>
+            />
             <ErrorMessage className={css.error} name="email" component="span" />
           </label>
-          <label className={css.label} htmlFor="bookingDate">
-            <Field
-              className={css.field}
-              name="bookingDate"
-              component={FormikDatePicker}
-              // fullWidth
-            />
 
+          <label className={css.label} htmlFor="bookingDate">
+            <DatePicker
+              showIcon
+              minDate={new Date()}
+              className={css.field}
+              selected={values.bookingDate} // Bind Formik's field value
+              onChange={(date) =>
+                setFieldValue(
+                  "bookingDate",
+                  date ? date.toISOString().split("T")[0] : ""
+                )
+              } // Update Formik field
+              placeholderText="Booking date"
+            />
             <ErrorMessage
               className={css.error}
               name="bookingDate"
               component="span"
             />
           </label>
+
           <label className={css.label} htmlFor="comment">
             <Field
               className={clsx(css.field, css.comment)}
               placeholder={"Comment"}
               type="text"
               name="comment"
-            ></Field>
+            />
             <ErrorMessage
               className={css.error}
               name="comment"
               component="span"
             />
           </label>
+
           <button className={css.btn} type="submit">
             Send
           </button>
         </Form>
-      </Formik>
-    </LocalizationProvider>
+      )}
+    </Formik>
+
+    // </LocalizationProvider>
   );
 }
