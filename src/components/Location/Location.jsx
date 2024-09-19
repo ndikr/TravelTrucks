@@ -1,14 +1,15 @@
 import css from "./Location.module.css";
 import { CiMap } from "react-icons/ci";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { changeLocation } from "../../redux/filters/slice";
 import { cities } from "../../constants/constants";
 import InputAdornment from "@mui/material/InputAdornment";
-
+import { selectLocation } from "../../redux/filters/selectors";
 export default function Location() {
   const dispatch = useDispatch();
+  const location = useSelector(selectLocation);
   return (
     <div className={css.locationBlock}>
       <h3 className={css.locationTitle}>Location</h3>
@@ -18,6 +19,7 @@ export default function Location() {
         }}
         options={cities}
         getOptionLabel={(option) => option}
+        value={location}
         renderInput={(params) => (
           <TextField
             slotProps={{

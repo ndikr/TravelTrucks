@@ -10,9 +10,7 @@ import { changeEquipment, changeForm } from "../../redux/filters/slice";
 export default function Filters() {
   const dispatch = useDispatch();
   let checkedEquipment = useSelector(selectEquipment);
-  console.log("rerender", checkedEquipment["refrigerator"]);
   let selectedForm = useSelector(selectForm);
-  console.log(selectedForm);
   function handleEquipmentChange(equipment) {
     checkedEquipment = {
       ...checkedEquipment,

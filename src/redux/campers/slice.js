@@ -12,7 +12,7 @@ export const campersSlice = createSlice({
     items: [],
     totalItems: 0,
     currentPage: 0,
-    itemsPerPage: 4,
+    itemsPerPage: 2,
     error: false,
     loading: false,
     favorites: [],
@@ -89,7 +89,16 @@ export const campersSlice = createSlice({
         state.favorites = [...state.favorites, action.payload];
       }
     },
+    setCurrentPage(state, action) {
+      console.log("setpage");
+      state.currentPage = 0;
+    },
+    setEmptyItems(state, action) {
+      state.items = [];
+      // state.currentPage = 0;
+    },
   },
 });
-export const { setFavorite } = campersSlice.actions;
+export const { setFavorite, setCurrentPage, setEmptyItems } =
+  campersSlice.actions;
 export const campersReducer = campersSlice.reducer;

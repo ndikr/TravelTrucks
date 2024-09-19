@@ -82,8 +82,16 @@ export default function BookingForm() {
           <label className={css.label} htmlFor="bookingDate">
             <DatePicker
               showIcon
+              toggleCalendarOnIconClick
               minDate={new Date()}
               className={css.field}
+              // calendarClassName="calendar"
+              // wrapperClassName="wrapper"
+              dayClassName={(date) => {
+                const currentDay = new Date().setHours(0, 0, 0, 0);
+                console.log(date, currentDay, date >= currentDay);
+                return date >= currentDay ? "calendarDay" : undefined;
+              }}
               selected={values.bookingDate} // Bind Formik's field value
               onChange={(date) =>
                 setFieldValue(

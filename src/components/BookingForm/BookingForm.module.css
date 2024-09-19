@@ -24,7 +24,9 @@
   font-size: 12px;
   line-height: 150%;
 }
-
+.calendar {
+  background-color: aquamarine;
+}
 .comment {
   height: 100px;
 }
