@@ -9,7 +9,8 @@ import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import "./react-datepicker.css";
-
+import emailjs from "emailjs-com";
+import { useRef } from "react";
 import { useState } from "react";
 
 export default function BookingForm() {
@@ -25,8 +26,27 @@ export default function BookingForm() {
     bookingDate: Yup.string().required("Required"),
     comment: Yup.string(),
   });
+  const formRef = useRef();
+
   function handleSubmit(values, actions) {
     console.log(values);
+    try {
+      emailjs
+        .sendForm("email_trucks", "template_qak6czm", formRef.current, {
+          publicKey: "rvxZexUMDshvW0cRb",
+        })
+        .then(
+          () => {
+            console.log("SUCCESS!");
+          },
+          (error) => {
+            console.log("FAILED...", error.text);
+          }
+        );
+    } catch (error) {
+      console.log(error);
+    }
+
     toast("Successfully booked");
     actions.resetForm();
   }
@@ -38,7 +58,7 @@ export default function BookingForm() {
       validationSchema={formSchema}
     >
       {({ setFieldValue, values }) => (
-        <Form className={css.form}>
+        <Form ref={formRef} className={css.form}>
           <label className={css.label} htmlFor="name">
             <Field
               className={css.field}
