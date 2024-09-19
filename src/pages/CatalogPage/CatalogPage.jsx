@@ -21,6 +21,7 @@ export default function CatalogPage() {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
   const campers = useSelector(selectCampers);
+
   const totalItems = useSelector(selectTotal);
   const currentPage = useSelector(selectCurrentPage);
   const itemsPerPage = useSelector(selectItemsPerPage);
@@ -79,7 +80,7 @@ export default function CatalogPage() {
       {(!mobileVersion || !searchFormVisible) && (
         <div className={css.catalogContent}>
           {isError ? (
-            <Error></Error>
+            <Error error={isError}></Error>
           ) : (
             <>
               <CatalogItems campers={campers}></CatalogItems>

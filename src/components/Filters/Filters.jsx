@@ -10,7 +10,7 @@ import { changeEquipment, changeForm } from "../../redux/filters/slice";
 export default function Filters() {
   const dispatch = useDispatch();
   let checkedEquipment = useSelector(selectEquipment);
-  console.log(checkedEquipment);
+  console.log("rerender", checkedEquipment["refrigerator"]);
   let selectedForm = useSelector(selectForm);
   console.log(selectedForm);
   function handleEquipmentChange(equipment) {
@@ -45,7 +45,7 @@ export default function Filters() {
                   <input
                     id={`checkbox-${ind}`}
                     type="checkbox"
-                    checked={checkedEquipment[equipment]}
+                    checked={checkedEquipment[equipment.toLowerCase()]}
                     // checked={checkedEquipment[equipment]}
                     // checked={checkedEquipment.contain(equipment)}
                     onChange={() => handleEquipmentChange(equipment)}
