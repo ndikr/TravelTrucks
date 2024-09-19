@@ -116,6 +116,10 @@
   }
 }
 @media screen and (min-width: 1440px) {
+  .itemCard {
+    display: flex;
+    gap: 25px;
+  }
   .itemImg {
     width: 292px;
     height: 320px;

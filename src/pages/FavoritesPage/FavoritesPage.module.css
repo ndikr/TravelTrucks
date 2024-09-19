@@ -24,3 +24,14 @@
   box-sizing: border-box;
   /* position: relative; */
 }
+
+@media screen and (min-width: 768px) {
+  .item {
+    max-width: 350px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .item {
+    max-width: 600px;
+  }
+}

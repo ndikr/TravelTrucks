@@ -7,6 +7,7 @@ import css from "./CatalogItem.module.css";
 import { CiMap } from "react-icons/ci";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import { selectFavorites } from "../../redux/campers/selectors";
 import Characteristics from "../Characteristics/Characteristics";
 export default function CatalogItem({ data }) {
@@ -26,9 +27,20 @@ export default function CatalogItem({ data }) {
     e.preventDefault();
     e.stopPropagation();
     dispatch(setFavorite(data));
+
+    toast(
+      checkIfIsFavorite(data) ? (
+        "Removed from favorite"
+      ) : (
+        <>
+          <p>Added!</p>
+          <Link to="/favorites">Go to favorites</Link>
+        </>
+      )
+    );
   }
   return (
-    <Link to={`/catalog/${data.id}`}>
+    <Link className={css.itemCard} to={`/catalog/${data.id}`}>
       <img
         className={css.itemImg}
         src={data.gallery[0].thumb}
