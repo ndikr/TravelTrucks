@@ -36,7 +36,6 @@
   color: var(--white);
 }
 .react-datepicker__navigation {
-  display: none;
 }
 .react-datepicker__current-month {
   color: var(--gray-light);
@@ -49,5 +48,7 @@
   color: var(--white);
 }
 .react-datepicker__day--today {
-  background-color: brown;
+}
+.react-datepicker__day--selected {
+  background-color: var(--button);
 }
