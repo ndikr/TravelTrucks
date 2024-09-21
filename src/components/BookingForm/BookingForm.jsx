@@ -99,7 +99,7 @@ export default function BookingForm() {
                   date ? date.toISOString().split("T")[0] : ""
                 )
               } // Update Formik field
-              placeholderText="Booking date"
+              placeholderText="Booking date*"
             />
             <ErrorMessage
               className={css.error}
