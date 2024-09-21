@@ -3,9 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchCamperById } from "../../redux/campers/operations";
 import { useRef, Suspense } from "react";
 import { useParams } from "react-router-dom";
-import { selectCamperById } from "../../redux/campers/selectors";
+import {
+  selectCampers,
+  selectError,
+  selectLoading,
+  selectSelectedItem,
+} from "../../redux/campers/selectors";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import Loader from "../../components/Loader/Loader";
+import Error from "../../components/Error/Error";
 import { useSearchParams } from "react-router-dom";
 import CamperInfo from "../../components/CamperInfo/CamperInfo";
 import css from "./CamperPage.module.css";
@@ -16,12 +23,22 @@ import Reviews from "../../components/Reviews/Reviews";
 import { NavLink } from "react-router-dom";
 export default function CamperPage() {
   const id = useParams().id;
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCamperById(id));
+  }, [dispatch, id]);
+
   const [searchParams] = useSearchParams();
   const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
   const [chosenTab, setChosenTab] = useState("features");
+
   const handleScrollToReviews = () => {
-    reviewsRef.current.scrollIntoView({ behavior: "smooth" }); // Scroll to the element smoothly
+    if (reviewsRef.current) {
+      reviewsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
+
   useEffect(() => {
     const scrollTo = searchParams.get("scrollTo");
     if (scrollTo === "reviews") {
@@ -30,40 +47,29 @@ export default function CamperPage() {
     }
   }, [searchParams]);
 
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch(fetchCamperById(id));
-  // }, [dispatch]);
-  const data = useSelector((state) => selectCamperById(state, id));
+  const data = useSelector(selectSelectedItem);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
 
-  return (
+  // Add a condition to check if data is ready
+  const isDataLoaded = data && Object.keys(data).length > 0;
+
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  if (isError) {
+    return <Error />;
+  }
+
+  return isDataLoaded ? (
     <div className={css.camperPage}>
       <CamperInfo
         data={data}
         openReviews={() => setChosenTab("reviews")}
         handleScrollToReviews={handleScrollToReviews}
-      ></CamperInfo>
+      />
       <ul className={css.switchers}>
-        {/* <li>
-          <NavLink
-            // className={({ isActive }) => {
-            //   return isActive && css.active;
-            // }}
-            to="features"
-          >
-            Features
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            // className={({ isActive }) => {
-            //   return isActive && css.active;
-            // }}
-            to="reviews"
-          >
-            Reviews
-          </NavLink>
-        </li> */}
         <li
           className={clsx(css.switcher, {
             [css.chosenTab]: chosenTab === "features",
@@ -82,10 +88,12 @@ export default function CamperPage() {
         </li>
       </ul>
       <div ref={reviewsRef} className={css.switchedContent}>
-        {chosenTab === "features" && <Features data={data}></Features>}
-        {chosenTab === "reviews" && <Reviews reviews={data.reviews}></Reviews>}
-        <BookingBlock></BookingBlock>
+        {chosenTab === "features" && <Features data={data} />}
+        {chosenTab === "reviews" && <Reviews reviews={data.reviews} />}
+        <BookingBlock />
       </div>
     </div>
+  ) : (
+    <Loader />
   );
 }

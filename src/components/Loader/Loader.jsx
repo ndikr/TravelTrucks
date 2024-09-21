@@ -5,7 +5,7 @@ export default function Loader() {
     <MagnifyingGlass
       visible={true}
       height="80"
-      width="80"
+      width="100%"
       ariaLabel="magnifying-glass-loading"
       wrapperStyle={{}}
       wrapperClass={css.loader}

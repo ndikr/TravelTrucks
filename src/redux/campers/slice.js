@@ -10,6 +10,7 @@ export const campersSlice = createSlice({
   name: "campers",
   initialState: {
     items: [],
+    selectedItem: {},
     totalItems: 0,
     currentPage: 0,
     itemsPerPage: 2,
@@ -69,7 +70,8 @@ export const campersSlice = createSlice({
       .addCase(fetchCamperById.fulfilled, (state, action) => {
         state.error = false;
         state.loading = false;
-        // state.items = action.payload;
+        console.log(action.payload);
+        state.selectedItem = action.payload;
       })
       .addCase(fetchCamperById.rejected, (state, action) => {
         state.error = action.payload;

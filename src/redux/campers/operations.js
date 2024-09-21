@@ -21,29 +21,12 @@ export const fetchCampers = createAsyncThunk(
     }
   }
 );
-// export const fetchFilteredCampers = createAsyncThunk(
-//   "fetchFilteredCampers",
-//   async (_, thunkAPI) => {
-//     try {
-//       const filters = handleEquipmentFilter(thunkAPI.getState().filters);
-//       console.log(filters);
-//       const response = await axios.get(`/campers`, {
-//         params: {
-//           ...filters,
-//         },
-//       });
-//       console.log(response.data);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
 export const fetchCamperById = createAsyncThunk(
   "fetchCamperById",
   async (id, thunkAPI) => {
     try {
       const response = await axios.get(`/campers/${id}`);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error);
