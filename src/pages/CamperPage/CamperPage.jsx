@@ -29,7 +29,7 @@ export default function CamperPage() {
     dispatch(fetchCamperById(id));
   }, [dispatch, id]);
 
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
   const [chosenTab, setChosenTab] = useState("features");
 
@@ -45,7 +45,9 @@ export default function CamperPage() {
       setChosenTab("reviews");
       handleScrollToReviews();
     }
-  }, [searchParams]);
+    searchParams.delete("scrollTo");
+    setSearchParams(searchParams);
+  }, [searchParams, setSearchParams]);
 
   const data = useSelector(selectSelectedItem);
   const isLoading = useSelector(selectLoading);
