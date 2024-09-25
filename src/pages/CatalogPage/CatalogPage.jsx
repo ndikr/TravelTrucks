@@ -17,6 +17,8 @@ import { selectFilters } from "../../redux/filters/selectors";
 import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 import handleEquipmentFilter from "../../hooks/handleEquipmentFilter";
+import { FaChevronCircleUp } from "react-icons/fa";
+
 export default function CatalogPage() {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
@@ -34,19 +36,14 @@ export default function CatalogPage() {
   useEffect(() => {
     if (!isMounted.current) {
       dispatch(fetchCampers({ page: currentPage + 1, limit: itemsPerPage }));
-      isMounted.current = true; // Mark as mounted
+      isMounted.current = true;
     }
   }, [dispatch]);
-  // if (!isLoading && campers.length === 0) {
-  //   console.log("fetch", isLoading, campers.length);
-  //   await dispatch(fetchCampers({ page: currentPage, limit: itemsPerPage }));
-  //   console.log("fetch after", isLoading, campers.length);
-  // }
-  // }, [dispatch]);
   const [searchFormVisible, setSearchFormVisible] = useState(
     window.innerWidth >= 768
   );
   const [mobileVersion, setMobileVersion] = useState(window.innerWidth < 768);
+  //track screen width
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 768) {
@@ -55,14 +52,32 @@ export default function CatalogPage() {
         setMobileVersion(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
-
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  const [upBtnIsVisible, setUpBtnIsVisible] = useState(false);
+  // Function to handle the scroll event
+  const handleScroll = () => {
+    if (window.scrollY > 200) {
+      setUpBtnIsVisible(true);
+    } else {
+      setUpBtnIsVisible(false);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
   return (
     <div className={css.catalog}>
       {mobileVersion && (
@@ -94,17 +109,12 @@ export default function CatalogPage() {
                 )}
             </>
           )}
-          {/* {isLoading ? (
-            <Loader></Loader>
-          ) : isError ? (
-            <Error></Error>
-          ) : (
-            <>
-              <CatalogItems campers={campers}></CatalogItems>
-              
-            </>
-          )} */}
         </div>
+      )}
+      {upBtnIsVisible && (
+        <button className={css.upBtn} onClick={scrollToTop}>
+          <FaChevronCircleUp className={css.upBtnIcon} size={50} />
+        </button>
       )}
     </div>
   );
