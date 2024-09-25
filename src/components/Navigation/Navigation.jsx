@@ -1,33 +1,34 @@
 import { NavLink } from "react-router-dom";
 import css from "./Navigation.module.css";
 import { BsSuitHeart } from "react-icons/bs";
-export default function Navigation({ mobMenuMod, toggleMobMenu }) {
+export default function Navigation({ mobMenuMod, setMobMenuOpen }) {
+  console.log(mobMenuMod);
   return (
     <nav>
       <ul className={mobMenuMod ? css.mobNavigation : css.navigation}>
-        <li>
+        <li className={css.navLink}>
           <NavLink
             className={({ isActive }) => (isActive ? css.active : "")}
             to="/"
-            onClick={() => toggleMobMenu(false)}
+            onClick={() => setMobMenuOpen(false)}
           >
             Home
           </NavLink>
         </li>
-        <li>
+        <li className={css.navLink}>
           <NavLink
             className={({ isActive }) => (isActive ? css.active : "")}
             to="/catalog"
-            onClick={() => toggleMobMenu(false)}
+            onClick={() => setMobMenuOpen(false)}
           >
             Catalog
           </NavLink>
         </li>
-        <li>
+        <li className={css.navLink}>
           <NavLink
             className={({ isActive }) => (isActive ? css.active : "")}
             to="/favorites"
-            onClick={() => toggleMobMenu(false)}
+            onClick={() => setMobMenuOpen(false)}
           >
             {mobMenuMod ? "Favorites" : <BsSuitHeart size="25px" />}
           </NavLink>

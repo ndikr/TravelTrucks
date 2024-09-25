@@ -27,6 +27,9 @@
   text-decoration: underline;
   cursor: pointer;
 }
+.rating:hover {
+  color: var(--button);
+}
 .location {
   display: flex;
   align-items: center;

@@ -7,20 +7,28 @@ import { TiThMenu } from "react-icons/ti";
 import css from "./Header.module.css";
 // import { useSelector } from "react-redux";
 import { useState } from "react";
+import MobMenu from "../MobMenu/MobMenu";
 export default function Header() {
-  const [mobMenuOpen, setMobMenuOpen] = useState(null);
+  const [mobMenuOpen, setMobMenuOpen] = useState(false);
+  console.log(mobMenuOpen);
   // const isLoggedIn = useSelector(selectLoginStatus);
   return (
     <header className={css.header}>
-      <Logo></Logo>
-      <Navigation
-        mobMenuMod={mobMenuOpen}
-        toggleMobMenu={setMobMenuOpen}
-      ></Navigation>
-      <button className={css.btn} onClick={() => setMobMenuOpen(!mobMenuOpen)}>
+      <button className={css.btn} onClick={() => setMobMenuOpen(true)}>
         <TiThMenu />
       </button>
+      <Logo></Logo>
+      {!mobMenuOpen && (
+        <Navigation
+        // mobMenuMod={mobMenuOpen}
+        // toggleMobMenu={setMobMenuOpen}
+        ></Navigation>
+      )}
 
+      <MobMenu
+        mobMenuOpen={mobMenuOpen}
+        setMobMenuOpen={setMobMenuOpen}
+      ></MobMenu>
       {/* {isLoggedIn ? <UserMenu></UserMenu> : <AuthNav></AuthNav>} */}
     </header>
   );

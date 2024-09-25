@@ -25,6 +25,11 @@
   line-height: 150%;
   letter-spacing: -0.01em;
   color: var(--white);
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover {
+  scale: 1.2;
+  background-color: var(--button-hover);
 }
 .clearBtn {
   margin-top: 10px;
@@ -37,5 +42,12 @@
   line-height: 150%;
   color: var(--text);
   letter-spacing: -0.01em;
-  background-color: var(--gray-light);
+  border: 1px solid var(--gray-light);
+
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.clearBtn:hover {
+  scale: 1.2;
+  border-color: var(--button);
 }
