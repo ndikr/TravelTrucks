@@ -90,7 +90,10 @@ export default function CatalogPage() {
           {searchFormVisible ? (
             <IoIosCloseCircleOutline size={30} />
           ) : (
-            <CiFilter size={30} />
+            <div className={css.filterMenuIcon}>
+              <CiFilter size={30} />
+              <p>Filter</p>
+            </div>
           )}
         </button>
       )}

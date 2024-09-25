@@ -28,7 +28,12 @@ export default function CamperPage() {
   useEffect(() => {
     dispatch(fetchCamperById(id));
   }, [dispatch, id]);
+  const data = useSelector(selectSelectedItem);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
 
+  // Add a condition to check if data is ready
+  const isDataLoaded = data && Object.keys(data).length > 0;
   const [searchParams, setSearchParams] = useSearchParams();
   const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
   const [chosenTab, setChosenTab] = useState("features");
@@ -40,21 +45,16 @@ export default function CamperPage() {
   };
 
   useEffect(() => {
-    const scrollTo = searchParams.get("scrollTo");
-    if (scrollTo === "reviews") {
-      setChosenTab("reviews");
-      handleScrollToReviews();
+    if (isDataLoaded) {
+      const scrollTo = searchParams.get("scrollTo");
+      if (scrollTo === "reviews") {
+        setChosenTab("reviews");
+        handleScrollToReviews();
+      }
+      searchParams.delete("scrollTo");
+      setSearchParams(searchParams);
     }
-    searchParams.delete("scrollTo");
-    setSearchParams(searchParams);
-  }, [searchParams, setSearchParams]);
-
-  const data = useSelector(selectSelectedItem);
-  const isLoading = useSelector(selectLoading);
-  const isError = useSelector(selectError);
-
-  // Add a condition to check if data is ready
-  const isDataLoaded = data && Object.keys(data).length > 0;
+  }, [searchParams, setSearchParams, isDataLoaded]);
 
   if (isLoading) {
     return <Loader />;
