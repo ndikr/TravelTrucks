@@ -18,6 +18,8 @@ import Loader from "../../components/Loader/Loader";
 import Error from "../../components/Error/Error";
 import handleEquipmentFilter from "../../hooks/handleEquipmentFilter";
 import { FaChevronCircleUp } from "react-icons/fa";
+import { CiFilter } from "react-icons/ci";
+import { IoIosCloseCircleOutline } from "react-icons/io";
 
 export default function CatalogPage() {
   const isLoading = useSelector(selectLoading);
@@ -85,7 +87,11 @@ export default function CatalogPage() {
           className={css.filterMenuBtn}
           onClick={() => setSearchFormVisible(!searchFormVisible)}
         >
-          {searchFormVisible ? "close" : "filter"}
+          {searchFormVisible ? (
+            <IoIosCloseCircleOutline size={30} />
+          ) : (
+            <CiFilter size={30} />
+          )}
         </button>
       )}
       {(!mobileVersion || searchFormVisible) && (

@@ -52,7 +52,10 @@ export default function CatalogItem({ data }) {
             <h4 className={css.itemTitle}>{data.name}</h4>
             <p className={css.itemPrice}>
               €{data.price},00{" "}
-              <button onClick={handleSettingFavorite}>
+              <button
+                onClick={handleSettingFavorite}
+                className={css.favoriteBtn}
+              >
                 {checkIfIsFavorite(data) ? (
                   <BsSuitHeartFill color="#E44848" />
                 ) : (
