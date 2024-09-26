@@ -1,11 +1,8 @@
 .header {
   display: flex;
-  /* position: fixed; */
-  /* height: 72px; */
   width: 100%;
   box-sizing: border-box;
   top: 0;
-  /* justify-content: center; */
   justify-content: space-between;
   align-items: center;
   position: relative;

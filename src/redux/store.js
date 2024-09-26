@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { campersReducer } from "./campers/slice";
 import { filtersReducer } from "./filters/slice";
-import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
+import storage from "redux-persist/lib/storage";
 import {
   persistStore,
   persistReducer,
@@ -35,7 +35,6 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
-  // devTools: process.env.NODE_ENV === "development",
 });
 
 export const persistor = persistStore(store);

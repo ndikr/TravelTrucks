@@ -1,7 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-// import { fetchCampers, fetchCamperById } from "./operations";
-
 export const filtersSlice = createSlice({
   name: "filters",
   initialState: {

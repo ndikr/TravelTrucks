@@ -3,19 +3,15 @@
   font-size: 20px;
   line-height: 120%;
   color: var(--main);
-
-  border-bottom: 1px solid var(--gray-light); /* Adjust thickness and color */
-  padding-bottom: 24px; /* Adjust spacing between text and underline */
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 24px;
 }
-/* .checkbox {
-  visibility: hidden;
-} */
+
 .options {
   margin-top: 24px;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  /* width: 300px; */
 }
 
 .option {
@@ -25,8 +21,6 @@
   align-items: center;
   border-radius: 12px;
   padding: 16px 18px;
-  /* width: 76px;
-  */
   width: 76px;
   height: 64px;
   font-weight: 500;
@@ -35,21 +29,6 @@
   letter-spacing: -0.01em;
   gap: 8px;
   border: 1px solid var(--gray-light);
-  /* flex: 1 1 30%; Grow, shrink, and set the basis to 30% */
-
-  /* 
-  border-radius: 12px;
-  display: flex;
-
-  flex-direction: column;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  letter-spacing: -0.01em;
-  text-align: center;
-  color: var(--main);
-  width: 80px;
-  height: 64px; */
 }
 .option input {
   position: absolute;
@@ -77,13 +56,9 @@
   position: absolute;
   display: none;
 }
-
-/* Show the checkmark when checked */
 .option input:checked ~ .checkmark:after {
   display: block;
 }
-
-/* Style the checkmark/indicator */
 .option .checkmark:after {
   left: 9px;
   top: 5px;
@@ -95,9 +70,3 @@
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-/* .option:hover {
-  border-color: var(--button);
-}
-.option .checkbox:checked ~ .option {
-  background-color: #2196f3;
-} */

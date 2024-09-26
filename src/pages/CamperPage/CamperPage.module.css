@@ -10,9 +10,6 @@
   display: flex;
   gap: 40px;
 }
-
-.switcher {
-}
 .chosenTab {
   border-bottom: 5px solid var(--button);
   padding-bottom: 14px;

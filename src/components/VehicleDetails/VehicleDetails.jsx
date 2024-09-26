@@ -2,7 +2,7 @@ import css from "./VehicleDetails.module.css";
 
 export default function VehicleDetails({ data }) {
   return (
-    <div className={css.details}>
+    <div>
       <h4 className={css.title}>Vehicle details</h4>
       <ul className={css.detailsList}>
         <li className={css.detail}>

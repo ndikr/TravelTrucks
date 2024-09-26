@@ -6,10 +6,7 @@ export default function Rating({ rating }) {
     <ul className={css.rating}>
       {[...Array(totalStars)].map((_, index) => (
         <li key={index}>
-          <FaStar
-            key={index}
-            color={index < rating ? "#FFC531" : "#F2F4F7"} // Change color based on rating value
-          />
+          <FaStar key={index} color={index < rating ? "#FFC531" : "#F2F4F7"} />
         </li>
       ))}
     </ul>

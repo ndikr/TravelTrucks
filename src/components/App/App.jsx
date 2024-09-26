@@ -13,7 +13,6 @@ const NotFoundPage = lazy(() =>
 import Features from "../../components/Features/Features";
 import Reviews from "../../components/Reviews/Reviews";
 export default function App() {
-  const isRefreshing = false;
   return (
     <Layout>
       <Routes>
@@ -30,15 +29,5 @@ export default function App() {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
-
-    // <>
-    //   {isRefreshing ? (
-    //     <p>Loading...</p>
-    //   ) : (
-    //     <Layout>
-
-    //     </Layout>
-    //   )}
-    // </>
   );
 }

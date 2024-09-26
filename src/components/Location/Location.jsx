@@ -6,7 +6,6 @@ import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import { changeLocation } from "../../redux/filters/slice";
 import { cities } from "../../constants/constants";
-import InputAdornment from "@mui/material/InputAdornment";
 import { selectLocation } from "../../redux/filters/selectors";
 export default function Location() {
   const dispatch = useDispatch();

@@ -32,8 +32,7 @@ export default function CamperPage() {
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
 
-  // Add a condition to check if data is ready
-  const isDataLoaded = data && Object.keys(data).length > 0;
+  const isDataLoaded = data && Object.keys(data).length > 0; //check if all data is loaded
   const [searchParams, setSearchParams] = useSearchParams();
   const reviewsRef = useRef(null); // Create a ref to the element you want to scroll to
   const [chosenTab, setChosenTab] = useState("features");

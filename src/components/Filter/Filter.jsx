@@ -15,8 +15,6 @@ import { CgSmartHomeRefrigerator } from "react-icons/cg";
 import { LuMicrowave } from "react-icons/lu";
 import { MdOutlineLocalGasStation } from "react-icons/md";
 import { FaHandHoldingWater } from "react-icons/fa";
-
-import css from "./Filter.module.css";
 import { FaQuestion } from "react-icons/fa";
 export default function Filter({ name, size }) {
   let IconComponent;

@@ -1,9 +1,7 @@
 import css from "./Filters.module.css";
-import FilterBlock from "../FilterBlock/FilterBlock";
 import { useDispatch } from "react-redux";
 import { equipments, forms } from "../../constants/constants";
 import Filter from "../Filter/Filter";
-import { useState } from "react";
 import { selectEquipment, selectForm } from "../../redux/filters/selectors";
 import { useSelector } from "react-redux";
 import { changeEquipment, changeForm } from "../../redux/filters/slice";
@@ -19,9 +17,6 @@ export default function Filters() {
     dispatch(changeEquipment(checkedEquipment));
   }
   function handleFormChange(form) {
-    console.log("selected:", selectedForm);
-    console.log("form:", form);
-
     if (selectedForm === form) {
       dispatch(changeForm(""));
     } else {
@@ -44,8 +39,6 @@ export default function Filters() {
                     id={`checkbox-${ind}`}
                     type="checkbox"
                     checked={checkedEquipment[equipment.toLowerCase()]}
-                    // checked={checkedEquipment[equipment]}
-                    // checked={checkedEquipment.contain(equipment)}
                     onChange={() => handleEquipmentChange(equipment)}
                     className={css.checkboxInput}
                   />

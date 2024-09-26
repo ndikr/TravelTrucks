@@ -13,7 +13,6 @@ export default function CamperInfo({
     handleScrollToReviews();
   }
 
-  console.log(data);
   return (
     Object.keys(data).length !== 0 && (
       <div className={css.info}>

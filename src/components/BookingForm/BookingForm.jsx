@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage, useField } from "formik";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import * as Yup from "yup";
-import FormikDatePicker from "../FormikDatePicker/FormikDatePicker";
 import { clsx } from "clsx";
 import { toast } from "react-toastify";
 import DatePicker from "react-datepicker";
@@ -29,7 +28,6 @@ export default function BookingForm() {
   const formRef = useRef();
 
   function handleSubmit(values, actions) {
-    console.log(values);
     try {
       emailjs
         .sendForm("email_trucks", "template_qak6czm", formRef.current, {
@@ -89,7 +87,6 @@ export default function BookingForm() {
               // wrapperClassName="wrapper"
               dayClassName={(date) => {
                 const currentDay = new Date().setHours(0, 0, 0, 0);
-                console.log(date, currentDay, date >= currentDay);
                 return date >= currentDay ? "calendarDay" : undefined;
               }}
               selected={values.bookingDate} // Bind Formik's field value

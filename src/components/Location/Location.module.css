@@ -10,19 +10,6 @@
   color: var(--gray);
   font-size: 14px;
 }
-.locationChosen {
-  /* display: flex;
-  align-items: center;
-  border-radius: 12px;
-  padding: 10px 10px;
-  background: var(--inputs);
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 150%;
-  color: var(--main);
-  border: 0;
-  background-color: aquamarine; */
-}
 @media screen and (min-width: 768px) {
   .locationBlock {
     gap: 16px;

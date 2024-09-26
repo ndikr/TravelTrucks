@@ -51,7 +51,7 @@ export default function CatalogItem({ data }) {
           <div className={css.accentText}>
             <h4 className={css.itemTitle}>{data.name}</h4>
             <p className={css.itemPrice}>
-              €{data.price},00{" "}
+              €{data.price},00
               <button
                 onClick={handleSettingFavorite}
                 className={css.favoriteBtn}
@@ -96,7 +96,6 @@ export default function CatalogItem({ data }) {
             water: data.water,
           }}
         ></Characteristics>
-        {/* <p className={css.btn}>Show more</p> */}
       </div>
     </Link>
   );

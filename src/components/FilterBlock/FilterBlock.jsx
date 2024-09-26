@@ -3,13 +3,10 @@ import Filter from "../Filter/Filter";
 import toCamelCase from "../../hooks/toCamelCase";
 import { changeForm, changeEquipment } from "../../redux/filters/slice";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import clsx from "clsx";
 export default function FilterBlock({ title, items }) {
   const dispatch = useDispatch();
   let equipment = {};
-  // const [checkedItems, setCheckedItems] = useState([]);
-
   function handleClick(event) {
     switch (title) {
       case "Vehicle equipment":
