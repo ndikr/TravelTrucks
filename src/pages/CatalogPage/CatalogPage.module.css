@@ -1,0 +1,76 @@
+.catalog {
+  display: flex;
+  padding: 48px 30px;
+  position: relative;
+}
+.catalogContent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filterMenuBtn {
+  position: absolute;
+  top: 10px;
+  right: 48px;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--gray);
+}
+.filterMenuBtn:hover {
+  color: var(--button);
+  scale: 1.1;
+}
+.filterMenuIcon {
+  display: flex;
+  align-items: center;
+}
+.loadMoreBtn {
+  border-radius: 200px;
+  width: 166px;
+  height: 56px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  background: var(--button);
+  margin-top: 20px;
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.loadMoreBtn:hover {
+  background-color: var(--button-hover);
+  scale: 1.2;
+}
+.upBtn {
+  position: fixed;
+  bottom: 50px;
+  width: 50px;
+  height: 50px;
+  right: 20px;
+}
+.upBtnIcon {
+  color: var(--button);
+
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.upBtn:hover .upBtnIcon {
+  color: var(--button-hover);
+  scale: 1.2;
+}
+@media screen and (min-width: 768px) {
+  .catalog {
+    padding: 30px 40px;
+  }
+  .filterMenuBtn {
+    display: none;
+  }
+  .upBtn {
+    right: 100px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .catalog {
+    padding: 48px 64px;
+  }
+}
