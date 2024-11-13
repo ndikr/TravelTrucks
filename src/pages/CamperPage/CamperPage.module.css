@@ -1,5 +1,5 @@
 .camperPage {
-  padding: 20px 30px;
+  padding: 10px 10px;
 }
 .switchers {
   margin-top: 28px;
@@ -27,7 +27,7 @@
 
 @media screen and (min-width: 768px) {
   .camperPage {
-    padding: 10px 10px;
+    padding: 48px 64px;
   }
   .switchers {
     margin-top: 64px;
