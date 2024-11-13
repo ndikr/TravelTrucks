@@ -1,4 +1,3 @@
-export const selectFilters = (state) => state.filters;
-export const selectEquipment = (state) => state.filters.equipment;
-export const selectForm = (state) => state.filters.form;
-export const selectLocation = (state) => state.filters.location;
+export const selectFilterLocation = (state) => state.filters.location;
+export const selectFilterType = (state) => state.filters.type;
+export const selectFilterEquipments = (state) => state.filters.equipments;

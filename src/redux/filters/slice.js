@@ -1,53 +1,39 @@
 import { createSlice } from "@reduxjs/toolkit";
-export const filtersSlice = createSlice({
+
+const initialState = {
+  location: "",
+  type: "",
+  equipments: [],
+};
+
+const filtersSlice = createSlice({
   name: "filters",
-  initialState: {
-    location: "",
-    form: "",
-    equipment: {
-      automatic: false,
-      petrol: false,
-      ac: false,
-      bathroom: false,
-      kitchen: false,
-      tv: false,
-      radio: false,
-      refrigerator: false,
-      microwave: false,
-      gas: false,
-      water: false,
-    },
-  },
+  initialState,
   reducers: {
-    changeLocation(state, action) {
-      state.location = action.payload;
+    changeLocation(state, { payload }) {
+      state.location = payload || "";
     },
-    changeForm(state, action) {
-      state.form = action.payload;
+    changeType(state, { payload }) {
+      state.type = payload || "";
     },
-    changeEquipment(state, action) {
-      state.equipment = action.payload;
+    changeEquipments(state, { payload }) {
+      state.equipments = payload || [];
     },
-    clearFilters(state) {
-      state.location = "";
-      state.form = "";
-      state.equipment = {
-        automatic: false,
-        petrol: false,
-        ac: false,
-        bathroom: false,
-        kitchen: false,
-        tv: false,
-        radio: false,
-        refrigerator: false,
-        microwave: false,
-        gas: false,
-        water: false,
-      };
+    setFilters(state, { payload }) {
+      const { type = "", equipments = [], location = "" } = payload || {};
+      state.type = type;
+      state.location = location;
+      state.equipments = equipments;
     },
   },
 });
 
-export const { changeLocation, changeForm, changeEquipment, clearFilters } =
-  filtersSlice.actions;
+export const {
+  changeLocation,
+  changeType,
+  changeEquipments,
+  toggleEquipments,
+  setFilters,
+} = filtersSlice.actions;
+
 export const filtersReducer = filtersSlice.reducer;
