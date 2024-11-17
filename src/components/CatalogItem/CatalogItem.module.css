@@ -1,0 +1,153 @@
+.itemImg {
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.itemInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+.itemDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.accentText {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 133%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.itemTitle {
+  margin-right: 8px;
+}
+.itemTitle:hover {
+  color: var(--button);
+  text-decoration: underline;
+}
+.itemPrice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.additionalText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.itemRating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.itemRating:hover {
+  color: var(--button);
+  text-decoration: underline;
+}
+.itemLocation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.itemDescription {
+  font-weight: 400;
+  font-size: 12px;
+
+  line-height: 150%;
+  color: var(--text);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  text-overflow: ellipsis;
+}
+.btn {
+  border-radius: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 45px;
+  background: var(--button);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.favoriteBtn {
+  transition: scale 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.favoriteBtn:hover {
+  scale: 1.2;
+  color: var(--button);
+}
+@media screen and (min-width: 768px) {
+  .itemInfo {
+    gap: 18px;
+  }
+  .accentText {
+    font-size: 18px;
+  }
+  .itemTitle {
+    margin-right: 15px;
+  }
+  .itemPrice {
+    gap: 8px;
+  }
+  .additionalText {
+    font-size: 16px;
+    gap: 6px;
+  }
+  .itemDescription {
+    font-size: 16px;
+  }
+  .btn {
+    width: 166px;
+    height: 56px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .itemCard {
+    display: flex;
+    gap: 25px;
+  }
+  .itemImg {
+    width: 292px;
+    height: 320px;
+  }
+  .itemInfo {
+    gap: 24px;
+  }
+  .accentText {
+    font-size: 24px;
+  }
+  .itemPrice {
+    gap: 12px;
+  }
+  .additionalText {
+    gap: 16px;
+    flex-direction: row;
+  }
+  .itemRating {
+    gap: 4px;
+  }
+  .itemLocation {
+    gap: 4px;
+  }
+  .itemDescription {
+    -webkit-line-clamp: 1;
+  }
+}

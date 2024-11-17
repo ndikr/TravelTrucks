@@ -1,23 +1,38 @@
-import clsx from "clsx";
 import { NavLink } from "react-router-dom";
-import { ROUTERS } from "../../const";
-import css from "../styles/navigation.module.css";
-
-const buildClassName = ({ isActive }) => {
-  return clsx(css.link, isActive && css.active);
-};
-
-const Navigation = () => {
+import css from "./Navigation.module.css";
+import { BsSuitHeart } from "react-icons/bs";
+export default function Navigation({ mobMenuMod, setMobMenuOpen }) {
   return (
-    <nav className={css.nav}>
-      <NavLink className={buildClassName} to={ROUTERS.HOME}>
-        Home
-      </NavLink>
-      <NavLink className={buildClassName} to={ROUTERS.CATALOG}>
-        Catalog
-      </NavLink>
+    <nav>
+      <ul className={mobMenuMod ? css.mobNavigation : css.navigation}>
+        <li className={css.navLink}>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/"
+            onClick={() => setMobMenuOpen(false)}
+          >
+            Home
+          </NavLink>
+        </li>
+        <li className={css.navLink}>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/catalog"
+            onClick={() => setMobMenuOpen(false)}
+          >
+            Catalog
+          </NavLink>
+        </li>
+        <li className={css.navLink}>
+          <NavLink
+            className={({ isActive }) => (isActive ? css.active : "")}
+            to="/favorites"
+            onClick={() => setMobMenuOpen(false)}
+          >
+            {mobMenuMod ? "Favorites" : <BsSuitHeart size="25px" />}
+          </NavLink>
+        </li>
+      </ul>
     </nav>
   );
-};
-
-export default Navigation;
+}

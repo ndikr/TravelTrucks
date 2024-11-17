@@ -1,9 +1,3 @@
-.container {
-  padding: 16px 0;
-  display: flex;
-  justify-content: center;
-}
-
-.loaderWrapper svg {
-  fill: var(--color-button);
+.loader {
+  padding: 20px;
 }

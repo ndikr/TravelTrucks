@@ -1,24 +1,25 @@
+import Header from "../Header/Header";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Suspense } from "react";
-import { Toaster } from "react-hot-toast";
-import AppBar from "../AppBar/AppBar";
-import Loader from "../Loader/Loader";
-import css from "./Layout.module.css";
-import ScrollUp from "../ScrollUp/ScrollUp";
-import { Outlet } from "react-router-dom";
 
-const Layout = () => {
+export default function Layout({ children }) {
   return (
-    <div className={css.layout}>
-      <AppBar />
-      <main>
-        <Suspense fallback={<Loader />}>
-          <Outlet />
-        </Suspense>
-      </main>
-      <ScrollUp />
-      <Toaster />
-    </div>
+    <>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={2000}
+        hideProgressBar={true}
+        pauseOnHover
+        style={{ width: "400px" }}
+        toastStyle={{
+          backgroundColor: "#F2F4F7",
+        }}
+      />
+      <Header />
+      <Suspense fallback={null}>
+        <div>{children}</div>
+      </Suspense>
+    </>
   );
-};
-
-export default Layout;
+}
